@@ -7,7 +7,7 @@ if __name__ == '__main__';
     (p
         | beam.io.ReadFromText('gs://<my-bucket>')  //Read inputs
         | beam.FlatMap(lambda line: count_words(line))  //Apply transform
-        | beam.io.WriteToText('gs://<my-bucket>')
+        | beam.io.WriteToText('gs://<my-bucket>')  //Write to sink
     )
     
   # end of with-clause: runs, stops the pipeline
