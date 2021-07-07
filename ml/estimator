@@ -1,0 +1,29 @@
+### Estimator comes with a method that handles distributed training and evaluation
+
+- Distribute the graph
+- Share variables
+- Evaluate occassionally
+- Handle machine failures
+- Create checkpoint files
+- Recover from failures
+- Save summaries for Tensorboard
+
+estimator = tf.estimator.LinearRegressor(
+                         model_dir=output_dir,
+                         feature_columns=feature_cols)
+                         
+...
+
+tf.estimator.train_and_evaluate(estimator,
+                               train_spec,
+                               eval_spec)
+                               
+...
+
+//Pass in:
+1. Estimator
+2. Train Spec
+3. Eval Spec
+
+### TIP!
+In TensorFlow, data is often divided into training and evaluation sets, which defines a path for measuring effectiveness and for improvement.
